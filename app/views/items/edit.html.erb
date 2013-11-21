@@ -1,0 +1,46 @@
+<div class="page-header">
+  <h1>Editing Item #<%= @item.id %></h1>
+</div>
+
+<%= form_tag(item_url(@item), method: 'patch', class: 'form-horizontal') do %>
+  <div class="form-group">
+    <%= label_tag :name, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :name, @item.name, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :category_id, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= number_field_tag :category_id, @item.category_id, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :color, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :color, @item.color, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :brand, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :brand, @item.brand, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :price, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :price, @item.price, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-6">
+      <%= submit_tag "Update Item", class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>
