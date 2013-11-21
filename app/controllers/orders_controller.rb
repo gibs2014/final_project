@@ -21,6 +21,16 @@ class OrdersController < ApplicationController
     else
       render 'new'
     end
+
+    params.each do |key, value|
+      splitted = key.split('_')
+      if splitted.first == 'item'
+        oi = OrderItem.new
+        oi.order_id = @order.id
+        oi.item_id = splitted.last
+        oi.save
+      end
+    end
   end
 
   def edit

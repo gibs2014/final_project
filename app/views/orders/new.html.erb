@@ -3,6 +3,13 @@
 </div>
 
 <%= form_tag(orders_url, method: 'post', class: 'form-horizontal') do %>
+  <% Item.all.each do |item| %>
+    <%= label_tag("item_#{item.id}", image_tag('http://ecx.images-amazon.com/images/I/71RS3wri-DL._SX522_.jpg')) %>
+    <%= check_box_tag "item_#{item.id}" %>
+  <% end %>
+
+
+
   <div class="form-group">
     <%= label_tag :user_id, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
