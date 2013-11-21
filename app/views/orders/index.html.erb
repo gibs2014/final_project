@@ -18,7 +18,7 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.user_id %></td>
+        <td><%= order.user.full_name %></td>
         <td><%= order.complete? %></td>
         <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, order_url(order), class: 'btn btn-primary' %></td>
         <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_order_url(order), class: 'btn btn-warning' %></td>
