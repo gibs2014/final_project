@@ -27,8 +27,10 @@ ActiveRecord::Schema.define(version: 20131121001342) do
   end
 
   create_table "orders", force: true do |t|
-    t.integer "user_id"
-    t.boolean "complete"
+    t.integer  "user_id"
+    t.boolean  "complete"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

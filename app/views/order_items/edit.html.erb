@@ -6,14 +6,14 @@
   <div class="form-group">
     <%= label_tag :order_id, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= number_field_tag :order_id, @order_item.order_id, class: 'form-control' %>
+      <%= select_tag :order_id, options_from_collection_for_select(Order.all, :id, :created_at, @order_item.order_id), class: 'form-control' %>
     </div>
   </div>
 
   <div class="form-group">
     <%= label_tag :item_id, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= number_field_tag :item_id, @order_item.item_id, class: 'form-control' %>
+      <%= select_tag :item_id, options_from_collection_for_select(Item.all, :id, :name, @order_item.item_id), class: 'form-control' %>
     </div>
   </div>
 
